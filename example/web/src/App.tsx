@@ -2,11 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import * as rust from './rust/example';
+import { Signal, Command } from './rust/types';
 
 function App() {
-  rust.default().then(() =>
-    rust.handle('{"Command": "Start"}').then(console.log).catch(console.error)
-  );
+  rust.default().then(() => {
+    let signal: Signal = { type: "Command", content: Command.Start }
+    rust.handle(JSON.stringify(signal)).then(console.log).catch(console.error)
+});
 
   const [count, setCount] = useState(0)
 

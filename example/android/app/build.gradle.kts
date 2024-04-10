@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    // For typeshare
+    kotlin("plugin.serialization") version "1.9.23"
 }
 
 android {
@@ -70,4 +72,7 @@ dependencies {
     // Uniffi
     implementation("net.java.dev.jna:jna:5.7.0@aar")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+
+    // Typeshare
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
 }

@@ -6,20 +6,6 @@
 
 ---
 
-FUCK UNIFFI ET WASM
-
-- Générer un codec js/swift/kotlin
-- Utiliser serde-generate
-- Dans Rust, faire le serde 
-- Faire des libs js/swift/kotlin facilement utilisable (via des échanges de string)
-- Faire un tooling (CLI) pour générer les types
-
-1. Générer modules natifs avec String
-2. Générer les types
-3. Bundle les types avec le module
-4. Faire un wrapper types + module
-
-
-OPTION 1 : Rust -> generates protobuf -> generates TS/Swift/Kotlin -> generates glue code (wasm / uniffi...)
-
-OPTION 2 : Rust -> typeshare -> generate a uniffi/wasm runtime with serde -> generate glue code
+TODO : 
+- Add serialization and jna deps to build.gradle
+- Rename enum variant to lowercase in Kotlin to avoid name collision

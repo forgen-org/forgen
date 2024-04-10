@@ -1,6 +1,8 @@
 use serde::{Deserialize, Serialize};
 
+#[typeshare::typeshare]
 #[derive(Serialize, Deserialize)]
+#[serde(tag = "type", content = "content")]
 pub enum Signal {
     Command(Command),
     Event(Event),
@@ -29,12 +31,14 @@ impl Signal {
     }
 }
 
+#[typeshare::typeshare]
 #[derive(Serialize, Deserialize)]
 pub enum Command {
     Start,
     Stop,
 }
 
+#[typeshare::typeshare]
 #[derive(Serialize, Deserialize)]
 pub enum Event {
     Started,
